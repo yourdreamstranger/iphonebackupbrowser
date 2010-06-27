@@ -38,22 +38,24 @@ byte  1 -  6   'mbdb\5\0'
 
 ===record (variable size)===
 
-* string     Domain 
-* string     Path
-* string     LinkTarget          absolute path
-* string     DataHash            SHA.1 (some files only)
-* string     unknown             always N/A
-* uint16     Mode                same as mbdx.Mode
-* uint32     unknown             always 0
-* uint32     unknown             ??
-* uint32     UserId
-* uint32     GroupId             mostly 501 for apps
-* uint32     Time1               relative to unix epoch (e.g time_t)
-* uint32     Time2               Time1 or Time2 is the former ModificationTime
-* uint32     Time3
-* uint64     FileLength          always 0 for link or directory
-* uint8      Flag                0 if special (link, directory), otherwise unknown
-* uint8      PropertyCount       number of following properties
+{{{
+  string     Domain
+  string     Path
+  string     LinkTarget          absolute path
+  string     DataHash            SHA.1 (some files only)
+  string     unknown             always N/A
+  uint16     Mode                same as mbdx.Mode
+  uint32     unknown             always 0
+  uint32     unknown             
+  uint32     UserId
+  uint32     GroupId             mostly 501 for apps
+  uint32     Time1               relative to unix epoch (e.g time_t)
+  uint32     Time2               Time1 or Time2 is the former ModificationTime
+  uint32     Time3
+  uint64     FileLength          always 0 for link or directory
+  uint8      Flag                0 if special (link, directory), otherwise unknown
+  uint8      PropertyCount       number of following properties
+}}}
 
 property       
 * string      name
