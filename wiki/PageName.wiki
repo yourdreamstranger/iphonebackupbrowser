@@ -1,0 +1,12 @@
+#summary MBDB/MBDX file format.
+
+= Introduction =
+
+iTunes 9.2 has changed Manifest.plist content and removed the .mdinfo files.
+
+The files database is now stored in a couple of file: Manifest.mbdb and Manifest.mbdx. The applications list remains in Manifest.plist, but the format has (a little) changed.
+
+
+= Details =
+
+TODO...
