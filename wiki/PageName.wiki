@@ -16,11 +16,14 @@ Important : all numbers are [http://en.wikipedia.org/wiki/Endianness big endian]
 This is the index file.
 
 ===header==
-byte  1 -  6   'mbdx\2\0'
-byte  7 - 10   number of records
+{{{
+  uint8[6]    'mbdx\2\0'
+  uint32      record count in the file
+}}}
 
 ===record (fixed size of 26 bytes)===
 
+{{{
   uint8[20]  the Key of the file, it's also the filename in the backup directory
              It's the same key as 9.1 backups.
   uint32     offset of file record in .mbdb file
@@ -30,11 +33,14 @@ byte  7 - 10   number of records
                  4xxx  directory
                  8xxx  regular file
              The meaning of xxx is unknown to me, it corresponds to the _Mode field in the old backup data.
+}}}
 
 ==MBDB==
 
 ===header==
-byte  1 -  6   'mbdb\5\0'
+{{{
+  uint8[6]    'mbdb\5\0'
+}}}
 
 ===record (variable size)===
 
@@ -57,8 +63,10 @@ byte  1 -  6   'mbdb\5\0'
   uint8      PropertyCount       number of following properties
 }}}
 
-property       
-* string      name
-* string      value               can be a string or a binary content
+Property is a couple of strings:
+{{{       
+  string      name
+  string      value               can be a string or a binary content
+}}}
 
 A string is composed of a uint16 that contains the length in bytes or 0xFFFF (for null or N/A) then the characters, in UTF-8 with canonical decomposition (Unicode normalization form D).
