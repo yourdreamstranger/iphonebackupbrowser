@@ -33,8 +33,9 @@ This is the index file.
                  Axxx  symbolic link
                  4xxx  directory
                  8xxx  regular file
-             The meaning of xxx is unknown to me, it corresponds to the _Mode field in the old backup data.
+             The meaning of xxx is unknown to me, it corresponds to the Mode field in the old backup data.
 }}}
+
 
 ==MBDB==
 
@@ -61,7 +62,7 @@ This is the index file.
   uint32     Time3
   uint64     FileLength          always 0 for link or directory
   uint8      Flag                0 if special (link, directory), otherwise unknown
-  uint8      PropertyCount       number of following properties
+  uint8      PropertyCount       number of properties following
 }}}
 
 Property is a couple of strings:
