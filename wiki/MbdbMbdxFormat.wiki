@@ -1,4 +1,4 @@
-#summary MBDB/MBDX file format.
+#summary MBDB and MBDX file formats.
 #labels Phase-Implementation,Featured
 
 = Introduction =
