@@ -12,7 +12,9 @@ The files database is now stored in a couple of file: Manifest.mbdb and Manifest
 
 Important : all numbers are [http://en.wikipedia.org/wiki/Endianness big endian].
 
-==MBDX== (removed in iTunes 10.5 backups)
+==MBDX== 
+
+(removed in iTunes 10.5 backups)
 
 This is the index file.
 
